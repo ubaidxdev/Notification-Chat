@@ -56,7 +56,6 @@ class _ChatScreenState extends State<ChatScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(widget.model.id);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: constantSheet.colors.primary,

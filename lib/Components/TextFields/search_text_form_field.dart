@@ -1,4 +1,4 @@
-import 'package:notification_chat/Utils/app_validators%20copy.dart';
+import 'package:notification_chat/Utils/app_validators.dart';
 import 'package:notification_chat/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

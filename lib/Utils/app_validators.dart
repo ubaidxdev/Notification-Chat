@@ -41,5 +41,3 @@ class PasswordValidator extends AppValidator {
     }
   }
 }
-
-

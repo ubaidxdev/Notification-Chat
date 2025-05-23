@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/material.dart';
 
 class FirestorageFuction {
   final _storage = FirebaseStorage.instance;
@@ -8,15 +9,14 @@ class FirestorageFuction {
   Future<String> uploadFile(File file) async {
     String url = "";
     try {
-      final String id = DateTime.now().millisecondsSinceEpoch.toString() +
+      final String id =
+          DateTime.now().millisecondsSinceEpoch.toString() +
           file.path.split("/").last;
       final reference = _storage.ref().child("media/$id");
       await reference.putFile(file);
       url = await reference.getDownloadURL();
     } catch (e) {
-      print("----------------");
-      print(e.toString());
-      print("----------------");
+      debugPrint(e.toString());
     }
     return url;
   }
@@ -28,7 +28,7 @@ class FirestorageFuction {
       await reference.putFile(file);
       url = await reference.getDownloadURL();
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
     return url;
   }
@@ -38,7 +38,7 @@ class FirestorageFuction {
       final reference = _storage.refFromURL(imageurl);
       await reference.delete();
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
   }
 }

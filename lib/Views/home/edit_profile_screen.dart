@@ -7,7 +7,7 @@ import 'package:notification_chat/Components/TextFields/primary_text_form_field.
 import 'package:notification_chat/Controllers/user_controller.dart';
 import 'package:notification_chat/Data/Functions/cloudinary_functions.dart';
 import 'package:notification_chat/Models/user_model.dart';
-import 'package:notification_chat/Utils/app_validators%20copy.dart';
+import 'package:notification_chat/Utils/app_validators.dart';
 import 'package:notification_chat/Utils/utils.dart';
 import 'package:notification_chat/main.dart';
 import 'package:flutter/material.dart';

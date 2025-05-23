@@ -85,7 +85,7 @@ class AppFunctions {
       elevation: 8.0,
     ).then((value) {
       if (value != null) {
-        print("Selected option: $value");
+        debugPrint("Selected option: $value");
         popupMenudataFunction(value, model, chatroomId);
       }
     });

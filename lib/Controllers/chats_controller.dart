@@ -2,11 +2,11 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:notification_chat/Controllers/user_controller.dart';
-import 'package:notification_chat/Data/Network/networkapi_service.dart';
+// import 'package:notification_chat/Data/Network/networkapi_service.dart';
 import 'package:notification_chat/Models/chat_model.dart';
 
 class ChatsController {
-  final _service = NetworkapiService();
+  // final _service = NetworkapiService();
   final _database = FirebaseDatabase.instance.ref("chats");
 
   // CREATE CHAT ROOM

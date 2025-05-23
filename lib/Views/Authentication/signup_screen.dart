@@ -7,7 +7,7 @@ import 'package:notification_chat/Controllers/user_controller.dart';
 import 'package:notification_chat/Data/Functions/cloudinary_functions.dart';
 import 'package:notification_chat/Models/user_model.dart';
 import 'package:notification_chat/Services/appconfig.dart';
-import 'package:notification_chat/Utils/app_validators%20copy.dart';
+import 'package:notification_chat/Utils/app_validators.dart';
 import 'package:notification_chat/Utils/routes/routes_name.dart';
 import 'package:notification_chat/main.dart';
 import 'package:flutter/material.dart';

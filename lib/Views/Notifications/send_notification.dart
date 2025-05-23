@@ -112,9 +112,7 @@ class SendNotification {
         body: jsonEncode(message),
       );
     } catch (e) {
-      print("=========================");
       debugPrint("Send Notification Function Error : ${e.toString()}");
-      print("=========================");
     }
   }
 }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class CloudinaryFunctions {
@@ -21,10 +22,9 @@ class CloudinaryFunctions {
     request.fields['upload_preset'] = _uploadPreset;
 
     // Attach the image file
-    request.files.add(await http.MultipartFile.fromPath(
-      'file',
-      imageFile.path,
-    ));
+    request.files.add(
+      await http.MultipartFile.fromPath('file', imageFile.path),
+    );
     // Send the request
     final response = await request.send();
     String imageUrl = "";
@@ -32,14 +32,10 @@ class CloudinaryFunctions {
       final responseData = await http.Response.fromStream(response);
       final data = jsonDecode(responseData.body);
       imageUrl = data["secure_url"];
-      print("-----------------------");
-      print('Upload successful: $data');
-      print("-----------------------");
+      debugPrint('Upload successful: $data');
     } else {
       imageUrl = "";
-      print("-----------------------");
-      print('Upload failed with status: ${response.statusCode}');
-      print("-----------------------");
+      debugPrint('Upload failed with status: ${response.statusCode}');
     }
     return imageUrl;
   }
@@ -53,7 +49,7 @@ class CloudinaryFunctions {
     final match = regex.firstMatch(imageUrl);
 
     if (match == null || match.group(1) == null) {
-      print('Invalid Cloudinary URL');
+      debugPrint('Invalid Cloudinary URL');
       return;
     }
 
@@ -77,9 +73,11 @@ class CloudinaryFunctions {
     );
 
     if (response.statusCode == 200) {
-      print('Image deleted successfully: ${response.body}');
+      debugPrint('Image deleted successfully: ${response.body}');
     } else {
-      print('Failed to delete image: ${response.statusCode}, ${response.body}');
+      debugPrint(
+        'Failed to delete image: ${response.statusCode}, ${response.body}',
+      );
     }
   }
 }
